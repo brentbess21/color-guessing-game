@@ -1,0 +1,27 @@
+@import 'src/themes/themes';
+
+.landingPage {
+  padding: 48px;
+
+  .titleContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 48px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .subtitle {
+    text-align: right;
+  }
+
+  .buttonsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}

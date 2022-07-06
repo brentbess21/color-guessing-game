@@ -1,0 +1,105 @@
+@import 'mixins';
+
+// Default theme used throughout
+$defaultTheme: (
+  // Gray Gradient
+        $white: #ffffff,
+        $grey50: #fafafa,
+        $grey100: #f2f3f2,
+        $grey200: #eceeed,
+        $grey300: #e2e4e2,
+        $grey400: #d2d5d2,
+        $grey500: #b2b8b3,
+        $grey600: #8a938c,
+        $grey700: #4c524d,
+        $grey800: #383d39,
+        $grey900: #252825,
+        $black: #000000,
+  // Primary colors
+        $pear50: #f6fefb,
+        $pear100: #dffcf1,
+        $pear300: #9ef5d4,
+        $pear500: #4becb0,
+        $pear700: #399c77,
+        $pear900: #154936,
+  // Secondary colors
+        $sky50: #f5fdff,
+        $sky100: #d2f4fe,
+        $sky300: #a1e3f7,
+        $sky500: #51cff5,
+        $sky700: #0586a3,
+        $sky900: #003d42,
+  // Success colors
+        $successLight: #cffcd7,
+        $success: #11a62a,
+        $successDark: #03490f,
+  // Error colors
+        $errorLight: #feedec,
+        $error: #e51a3c,
+        $errorDark: #750800,
+        $warningLight: #fff5cc,
+        $warning: #e6900f,
+        $warningDark: #5c4900,
+  // Info Colors
+        $infoLight: #cce6ff,
+        $info: #1469b8,
+        $infoDark: #002f5c,
+  //Misc
+        $transitionTime: 300ms,
+        $gradient: linear-gradient(123.69deg, #4becb0 17.71%, #51cff5 82.8%)
+);
+
+// Exports are for use in Javascript
+:export {
+  white: theme-var($white);
+  grey50: theme-var($grey50);
+  grey100: theme-var($grey100);
+  grey200: theme-var($grey200);
+  grey300: theme-var($grey300);
+  grey400: theme-var($grey400);
+  grey500: theme-var($grey500);
+  grey600: theme-var($grey600);
+  grey700: theme-var($grey700);
+  grey800: theme-var($grey800);
+  grey900: theme-var($grey900);
+  black: theme-var($black);
+  pear50: theme-var($pear50);
+  pear100: theme-var($pear100);
+  pear300: theme-var($pear300);
+  pear500: theme-var($pear500);
+  pear700: theme-var($pear700);
+  pear900: theme-var($pear900);
+  sky50: theme-var($sky50);
+  sky100: theme-var($sky100);
+  sky300: theme-var($sky300);
+  sky500: theme-var($sky500);
+  sky700: theme-var($sky700);
+  sky900: theme-var($sky900);
+  successLight: theme-var($successLight);
+  success: theme-var($success);
+  successDark: theme-var($successDark);
+  errorLight: theme-var($errorLight);
+  error: theme-var($error);
+  errorDark: theme-var($errorDark);
+  warningLight: theme-var($warningLight);
+  warning: theme-var($warning);
+  warningDark: theme-var($warningDark);
+  infoLight: theme-var($infoLight);
+  info: theme-var($info);
+  infoDark: theme-var($infoDark);
+  primaryBoxShadowColor: var(--primaryBoxShadowColor);
+  gradient: theme-var($gradient);
+  skeleton: var(--skeleton);
+}
+
+/*
+// NOTE: Inside of App.scss place the following:
+
+// Spread default theme into App class
+.App {
+	@include spread-map($defaultTheme);
+}
+
+// If you have multiple themes place the following:
+// Overrides
+*/

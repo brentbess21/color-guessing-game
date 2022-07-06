@@ -1,0 +1,89 @@
+// These variables are mostly for making auto complete better
+
+/* Font Weights */
+$fwThin: 100;
+$fwExtraThin: 200;
+$fwLight: 300;
+$fwRegular: 400;
+$fwMedium: 500;
+$fwSemiBold: 600;
+$fwBold: 700;
+$fwExtraBold: 800;
+$fwBlack: 900;
+$fwExtraBlack: 950;
+
+/* Global's used in calculations (page offsets, etc) */
+$menuExpandedWidth: 250px;
+$menuCollapsedWidth: 50px;
+
+// Map SCSS theme variables to CSS variables
+
+// Gray Palette
+$white: --white;
+$grey50: --grey50;
+$grey100: --grey100;
+$grey200: --grey200;
+$grey300: --grey300;
+$grey400: --grey400;
+$grey500: --grey500;
+$grey600: --grey600;
+$grey700: --grey700;
+$grey800: --grey800;
+$grey900: --grey900;
+$black: --black;
+
+// Primary Colors
+$pear50: --pear50;
+$pear100: --pear100;
+$pear300: --pear300;
+$pear500: --pear500;
+$pear700: --pear700;
+$pear900: --pear900;
+
+// Secondary colors
+$sky50: --sky50;
+$sky100: --sky100;
+$sky300: --sky300;
+$sky500: --sky500;
+$sky700: --sky700;
+$sky900: --sky900;
+
+//Success
+$successLight: --successLight;
+$success: --success;
+$successDark: --successDark;
+
+//Error
+$errorLight: --errorLight;
+$error: --error;
+$errorDark: --errorDark;
+$warningLight: --warningLight;
+$warning: --warning;
+$warningDark: --warningDark;
+
+//Info colors
+$infoLight: --infoLight;
+$info: --info;
+$infoDark: --infoDark;
+
+//Box Shadow Color
+$primaryBoxShadowColor: --primaryBoxShadowColor;
+
+//Misc
+$transitionTime: --transitionTime;
+$gradient: --gradient;
+$skeleton: --skeleton;
+
+//Z-Index
+$mobileStepperZIndex: --mobileStepperZIndex;
+$appBarZIndex: --appBarZIndex;
+$tooltipZIndex: --tooltipZIndex;
+$drawerZIndex: --drawerZIndex;
+$modalZIndex: --modalZIndex;
+$toastZIndex: --toastZIndex;
+
+// Sizes
+$desktopMenuWidth: 250px;
+
+$desktopAppBarHeight: 64px;
+$mobileAppBarHeight: 48px;
