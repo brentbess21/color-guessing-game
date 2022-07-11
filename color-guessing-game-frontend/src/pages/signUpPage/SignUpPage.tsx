@@ -2,8 +2,8 @@ import React, {ChangeEvent, FormEvent, useEffect, useState} from 'react';
 import './SignUpPage.scss';
 import {useNavigate} from "react-router";
 import classNames from "classnames";
-import serviceFactory from "../../services/serviceFactory";
-import UserService from "../../services/user/user.service";
+import {createNewUser} from "../../services/user/user.service";
+
 
 interface FormValues {
     firstName: string;
@@ -15,7 +15,6 @@ interface FormValues {
 
 const SignUpPage : React.FC = () => {
     let navigate = useNavigate();
-    const userService = serviceFactory.get<UserService>('UserService');
     const [isNext, setIsNext] = useState<boolean>(false);
     const [has8Characters, setHas8Characters] = useState<boolean>(false);
     const [containsNumber, setContainsNumber] = useState<boolean>(false);
@@ -38,6 +37,16 @@ const SignUpPage : React.FC = () => {
         navigate('/');
     }
 
+    function clearFormValues () {
+        setFormValues( {
+            firstName: '',
+            lastName: '',
+            email: '',
+            password: '',
+            confirmPassword: ''
+        })
+    }
+
     function validatePassword(password: string) {
         // Checking 8 characters
         setHas8Characters(password.length >= 8);
@@ -57,7 +66,7 @@ const SignUpPage : React.FC = () => {
     }
 
 
-    function handleSignUp (e: FormEvent) {
+    async function handleSignUp (e: FormEvent) {
         e.preventDefault();
         if(formValues.password !== formValues.confirmPassword) {
             console.log('Passwords do not match');
@@ -70,7 +79,29 @@ const SignUpPage : React.FC = () => {
             formValues.confirmPassword === ''
 
         ) {
-            console.log('You are missing a required field')
+            //todo: create a toast for this instead of an alert
+            alert('You are missing a required field')
+            return
+        }
+        if(formValues.password !== formValues.confirmPassword) {
+            //todo: create a toast for this instead of an alert
+            alert('Passwords do not match')
+            return
+        }
+        try {
+            const data : Api.User.Req.NewUser = {
+                firstName: formValues.firstName,
+                lastName: formValues.lastName,
+                primaryEmail: formValues.email,
+                password: formValues.password,
+            }
+            await createNewUser(data);
+            navigate('/home')
+            clearFormValues();
+        } catch (err) {
+            // todo: create a toast
+            console.log(err)
+            alert('There was an error. Please try again')
         }
     }
 

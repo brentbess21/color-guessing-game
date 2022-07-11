@@ -5,15 +5,17 @@ import SignUpPage from "./pages/signUpPage/SignUpPage";
 import ErrorPage from "./pages/errorPage/ErrorPage";
 import LoginPage from "./pages/loginPage/LoginPage";
 import LandingPage from "./pages/landingPage/LandingPage";
+import HomePage from "./pages/homePage/HomePage";
 
 function App() {
   return (
     <>
         <Routes>
-            <Route path={'/signup'} element={<SignUpPage />} />
-            <Route path={'/login'} element={<LoginPage />} />
-            <Route path={'/'} element={<LandingPage />} />
-            <Route path={'*'} element={<ErrorPage />} />
+            <Route path={'/home'} element={<HomePage />}/>
+            <Route path={'/signup'} element={<SignUpPage />}/>
+            <Route path={'/login'} element={<LoginPage />}/>
+            <Route path={'/'} element={<LandingPage />}/>
+            <Route path={'*'} element={<ErrorPage />}/>
         </Routes>
     </>
   );
