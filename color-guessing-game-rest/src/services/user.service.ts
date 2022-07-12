@@ -11,6 +11,7 @@ function getUsers() {
 
 function getUserById(id: number) {
     return db('user')
+        .select('id', 'firstName', 'lastName', 'primaryEmail', 'token', 'createdOn')
         .where('id', id)
         .first()
 }

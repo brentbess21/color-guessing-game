@@ -1,8 +1,11 @@
 import React, {ChangeEvent, FormEvent, useEffect, useState} from 'react';
+import { connect } from "react-redux";
 import './SignUpPage.scss';
 import {useNavigate} from "react-router";
 import classNames from "classnames";
 import {createNewUser} from "../../services/user/user.service";
+import {SET_CURRENT_USER, setCurrentUser} from "../../state/actions/userActions";
+import {Dispatch} from "redux";
 
 
 interface FormValues {
@@ -13,7 +16,17 @@ interface FormValues {
     confirmPassword: string;
 }
 
-const SignUpPage : React.FC = () => {
+interface SignUpPageStateProps {
+    userFormValues: FormValues
+}
+
+interface SignUpPageDispatchProps {
+    setCurrentUser : (user : Model.User.User)=>({type: string, payload: Model.User.User})
+}
+
+type SignUpPageProps = SignUpPageStateProps & SignUpPageDispatchProps
+
+const SignUpPage : React.FC<SignUpPageProps> = (props: SignUpPageProps) => {
     let navigate = useNavigate();
     const [isNext, setIsNext] = useState<boolean>(false);
     const [has8Characters, setHas8Characters] = useState<boolean>(false);
@@ -89,13 +102,14 @@ const SignUpPage : React.FC = () => {
             return
         }
         try {
-            const data : Api.User.Req.NewUser = {
+            const data : Model.User.NewUser = {
                 firstName: formValues.firstName,
                 lastName: formValues.lastName,
                 primaryEmail: formValues.email,
                 password: formValues.password,
             }
-            await createNewUser(data);
+            const newUser : Model.User.User = await createNewUser(data);
+            props.setCurrentUser(newUser);
             navigate('/home')
             clearFormValues();
         } catch (err) {
@@ -215,9 +229,19 @@ const SignUpPage : React.FC = () => {
             <div className={'formContainer'}>
                 {isNext? renderPasswordForm() : renderInitialForm()}
             </div>
-            {/*<button onClick={()=>{console.log(formValues)}}>click for info</button>*/}
         </div>
     )
 }
 
-export default SignUpPage;
+const mapStateToProps = (state: any) => {
+    return ({
+        userFormValues: state.user.userFormValues
+    })
+}
+
+const mapDispatchToProps = {
+    setCurrentUser : (user : Model.User.User)=>({type: SET_CURRENT_USER, payload: user})
+}
+
+
+export default connect<SignUpPageStateProps, SignUpPageDispatchProps>(mapStateToProps, mapDispatchToProps)(SignUpPage);

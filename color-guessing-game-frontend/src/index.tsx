@@ -2,8 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
 import { BrowserRouter as Router } from "react-router-dom";
+import { legacy_createStore as createStore, applyMiddleware, Reducer } from 'redux';
+import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
+import reducer from './state/reducers/index';
+
+const store = createStore( reducer as Reducer , applyMiddleware(thunk));
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -11,7 +17,9 @@ const root = ReactDOM.createRoot(
 root.render(
     <Router>
         <React.StrictMode>
-            <App />
+            <Provider store={store}>
+                <App />
+            </Provider>
         </React.StrictMode>
     </Router>
 );
