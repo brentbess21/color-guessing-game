@@ -2,22 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1cd6f02-3460-45d3-b626-33f0b5987dc5" name="Changes" comment="work on creating a user route with get users and create user endpoints">
-      <change afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/components/authWrapper/AuthWrapper.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/components/header/Header.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/components/header/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../color-guessing-game-frontend/src/@types/models.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/@types/models.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../color-guessing-game-frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../color-guessing-game-frontend/src/components/protectedRoute/ProtectedRoute.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/components/protectedRoute/ProtectedRoute.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../color-guessing-game-frontend/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../color-guessing-game-frontend/src/components/header/Header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/components/header/Header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../color-guessing-game-frontend/src/components/header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/components/header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../color-guessing-game-frontend/src/pages/homePage/HomePage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/pages/homePage/HomePage.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../color-guessing-game-frontend/src/pages/homePage/HomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/pages/homePage/HomePage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../color-guessing-game-frontend/src/pages/loginPage/LoginPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/pages/loginPage/LoginPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../color-guessing-game-frontend/src/services/user/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/services/user/user.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../color-guessing-game-frontend/src/state/actions/userActions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/state/actions/userActions.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../color-guessing-game-frontend/src/state/reducers/userReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/state/reducers/userReducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/@types/models.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/@types/models.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/endpoints/v1/user.api.v1.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/endpoints/v1/user.api.v1.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/user.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mariadb/data/ib_logfile0" beforeDir="false" afterPath="$PROJECT_DIR$/../mariadb/data/ib_logfile0" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +79,7 @@
       <workItem from="1657564613670" duration="6268000" />
       <workItem from="1657573942048" duration="3700000" />
       <workItem from="1657651642612" duration="9800000" />
-      <workItem from="1657766333482" duration="961000" />
+      <workItem from="1657766333482" duration="1712000" />
     </task>
     <task id="LOCAL-00001" summary="initial setup of basic server">
       <created>1657222967375</created>

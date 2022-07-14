@@ -2,6 +2,7 @@ import React from 'react';
 import './HomePage.scss';
 import {connect} from "react-redux";
 import {useNavigate} from "react-router";
+import Header from "../../components/header/Header";
 
 interface HomePageStateProps {
     currentUser: Model.User.User
@@ -19,12 +20,15 @@ const HomePage : React.FC<HomePageProps>= (props: HomePageProps) => {
     function handleLogout() {
         localStorage.clear();
         navigate('/welcome');
-
     }
+
     return (
         <div className={'homePage'}>
-            <h1>Welcome to your Home Page {props.currentUser.firstName}!</h1>
-            <button onClick={handleLogout}>Logout</button>
+            <Header />
+            <div className={'homePageContent'}>
+                <h1>Welcome to your Home Page {props.currentUser.firstName}!</h1>
+                <button onClick={handleLogout}>Logout</button>
+            </div>
         </div>
     )
 }
