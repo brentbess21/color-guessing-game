@@ -1,13 +1,26 @@
 import React, {ChangeEvent, FormEvent, useState} from 'react';
 import './LoginPage.scss';
 import {useNavigate} from "react-router";
+import {loginUserByPassword} from "../../services/user/user.service";
+import {SET_CURRENT_USER} from "../../state/actions/userActions";
+import {connect} from "react-redux";
 
 interface FormValues {
     email: string;
     password: string
 }
 
-const LoginPage = () => {
+interface LoginPageStateProps {
+    currentUser: Model.User.User;
+}
+
+interface LoginPageDispatchProps {
+    setCurrentUser : (user : Model.User.User)=>({type: string, payload: Model.User.User})
+}
+
+type LoginPageProps = LoginPageStateProps & LoginPageDispatchProps
+
+const LoginPage : React.FC<LoginPageProps> = (props: LoginPageProps ) => {
     let navigate = useNavigate();
     const [formValues, setFormValues] = useState<FormValues>({
         email: '',
@@ -23,13 +36,25 @@ const LoginPage = () => {
         });
     }
 
-    function handleLogin(e: FormEvent) {
+    async function handleLogin(e: FormEvent) {
         //todo: handle actual login logic after backend is setup
         e.preventDefault();
         if( formValues.email === '' || formValues.password === '') {
-            console.log('You are missing a required field')
+            alert('You are missing a required field')
         }
-        navigate('/home')
+        try {
+            const data : Model.User.LoginData = {
+                email: formValues.email,
+                password: formValues.password
+            }
+            const user : Model.User.User = await loginUserByPassword(data);
+            props.setCurrentUser(user);
+            if(props.currentUser) navigate('/home')
+
+        } catch (err) {
+            console.log(err)
+            alert('There was an error. Please try again')
+        }
     }
 
     return (
@@ -66,4 +91,14 @@ const LoginPage = () => {
     )
 }
 
-export default LoginPage;
+const mapStateToProps = (state: any) => {
+    return ({
+        currentUser: state.user.currentUser
+    })
+}
+
+const mapDispatchToProps = {
+    setCurrentUser : (user : Model.User.User)=>({type: SET_CURRENT_USER, payload: user})
+}
+
+export default connect<LoginPageStateProps, LoginPageDispatchProps>(mapStateToProps, mapDispatchToProps)(LoginPage);

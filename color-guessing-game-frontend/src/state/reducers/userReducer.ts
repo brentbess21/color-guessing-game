@@ -1,21 +1,7 @@
-import { SET_CURRENT_USER } from "../actions/userActions";
+import { SET_CURRENT_USER, FETCH_CURRENT_USER } from "../actions/userActions";
 
 export const initialState = {
-   userFormValues: {
-       firstName: '',
-       lastName: '',
-       email: '',
-       password: '',
-       confirmPassword: ''
-   },
-   currentUser: {
-       id: 0,
-       firstName: '',
-       lastName: '',
-       primaryEmail: '',
-       createdOn: '',
-       token: '',
-   }
+   currentUser: null
 }
 
 interface UserAction {
@@ -30,7 +16,15 @@ const userReducer = (state : Model.User.UserState = initialState, action : UserA
             return ({
                 ...state,
                 currentUser : action.payload
-            })
+            });
+        case(FETCH_CURRENT_USER) :
+            if(!localStorage.getItem('user')) return state
+            // @ts-ignore
+            let user = JSON.parse(localStorage.getItem('user'))
+            return ({
+                ...state,
+                currentUser : user
+            });
         default:
             return state
     }

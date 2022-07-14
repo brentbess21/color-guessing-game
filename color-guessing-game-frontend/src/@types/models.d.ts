@@ -2,8 +2,7 @@ declare namespace Model {
 
     export namespace User {
         export interface UserState {
-            userFormValues: UserFormValues;
-            currentUser: User;
+            currentUser: User | null;
         }
 
         export interface UserFormValues {
@@ -13,6 +12,7 @@ declare namespace Model {
             password: string;
             confirmPassword: string;
         }
+
         export interface NewUser {
             firstName: string;
             lastName: string;
@@ -27,6 +27,11 @@ declare namespace Model {
             primaryEmail: string;
             createdOn: string;
             token: string;
+        }
+
+        export interface LoginData {
+            email: string;
+            password: string;
         }
     }
 }

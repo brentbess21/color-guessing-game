@@ -1,5 +1,5 @@
 import express from "express";
-import { getUsers, createNewUser } from "../../../services/user.service";
+import { getUsers, createNewUser, login } from "../../../services/user.service";
 
 export const router = express.Router()
 
@@ -23,3 +23,15 @@ router.post('/', async (req: any, res: any)=> {
     }
 })
 
+router.post('/login' ,async (req: any, res: any)=> {
+    try {
+        // const result : Model.User.User = await login(req.body);
+        const result : any = await login(req.body);
+        res.status(200).json(result);
+    } catch (err) {
+        res.status(404).json({
+            message: 'There was an error logging in. Check if username and password are correct'
+        })
+        console.error(err)
+    }
+})

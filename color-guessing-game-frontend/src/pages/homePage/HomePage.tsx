@@ -1,23 +1,37 @@
 import React from 'react';
 import './HomePage.scss';
 import {connect} from "react-redux";
+import {useNavigate} from "react-router";
 
-const HomePage = (props: any) => {
+interface HomePageStateProps {
+    currentUser: Model.User.User
+}
 
-    function handleClick() {
-        console.log(props.user)
+interface HomePageDispatchProps {
+
+}
+
+type HomePageProps = HomePageStateProps & HomePageDispatchProps;
+
+const HomePage : React.FC<HomePageProps>= (props: HomePageProps) => {
+    let navigate = useNavigate();
+
+    function handleLogout() {
+        localStorage.clear();
+        navigate('/welcome');
+
     }
     return (
         <div className={'homePage'}>
-            <h1>Welcome to your Home Page!</h1>
-            <button onClick={handleClick}>Click Me For Info</button>
+            <h1>Welcome to your Home Page {props.currentUser.firstName}!</h1>
+            <button onClick={handleLogout}>Logout</button>
         </div>
     )
 }
 
 const mapStateToProps = (state: any) => {
     return({
-        user: state.user
+        currentUser: state.user.currentUser
     })
 }
 

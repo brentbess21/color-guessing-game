@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f1cd6f02-3460-45d3-b626-33f0b5987dc5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/components/protectedRoute/ProtectedRoute.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/components/protectedRoute/ProtectedRoute.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/state/actions/userActions.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/state/reducers/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/state/reducers/userReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../color-guessing-game-frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../color-guessing-game-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/package.json" afterDir="false" />
+    <list default="true" id="f1cd6f02-3460-45d3-b626-33f0b5987dc5" name="Changes" comment="work on creating a user route with get users and create user endpoints">
+      <change afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/components/authWrapper/AuthWrapper.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/components/header/Header.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/components/header/Header.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../color-guessing-game-frontend/src/@types/models.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/@types/models.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../color-guessing-game-frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../color-guessing-game-frontend/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../color-guessing-game-frontend/src/pages/homePage/HomePage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/pages/homePage/HomePage.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../color-guessing-game-frontend/src/components/protectedRoute/ProtectedRoute.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/components/protectedRoute/ProtectedRoute.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../color-guessing-game-frontend/src/pages/homePage/HomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/pages/homePage/HomePage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../color-guessing-game-frontend/src/pages/signUpPage/SignUpPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/pages/signUpPage/SignUpPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../color-guessing-game-frontend/src/pages/loginPage/LoginPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/pages/loginPage/LoginPage.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../color-guessing-game-frontend/src/services/user/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/services/user/user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../color-guessing-game-frontend/src/state/actions/userActions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/state/actions/userActions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../color-guessing-game-frontend/src/state/reducers/userReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/state/reducers/userReducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/@types/models.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/@types/models.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/endpoints/v1/user.api.v1.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/endpoints/v1/user.api.v1.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/user.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../mariadb/data/ib_logfile0" beforeDir="false" afterPath="$PROJECT_DIR$/../mariadb/data/ib_logfile0" afterDir="false" />
     </list>
@@ -62,6 +61,18 @@
       <recent name="$PROJECT_DIR$/src/api" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="server" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="server" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -75,7 +86,9 @@
       <workItem from="1657125582806" duration="7470000" />
       <workItem from="1657226116606" duration="7785000" />
       <workItem from="1657564613670" duration="6268000" />
-      <workItem from="1657573942048" duration="3075000" />
+      <workItem from="1657573942048" duration="3700000" />
+      <workItem from="1657651642612" duration="9800000" />
+      <workItem from="1657766333482" duration="961000" />
     </task>
     <task id="LOCAL-00001" summary="initial setup of basic server">
       <created>1657222967375</created>

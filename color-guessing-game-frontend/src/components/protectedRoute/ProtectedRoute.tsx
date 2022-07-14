@@ -1,16 +1,17 @@
-import React, {ReactNode} from 'react';
-import {  Outlet, Navigate } from 'react-router-dom';
+import React from 'react';
+import {  Navigate, Outlet } from 'react-router-dom';
 
 interface ProtectedRouteProps {
     children?: JSX.Element;
     redirectPath: string;
-    user?: Model.User.User;
+    currentUser: Model.User.User | null
 }
 const ProtectedRoute = (props: ProtectedRouteProps) => {
-    if(!props.user) {
-        return <Navigate to={props.redirectPath} replace />
+    if (!props.currentUser) {
+        return <Navigate to={props.redirectPath} replace />;
     }
-    return props.children ? props.children : <Outlet />
+
+    return props.children ? props.children : <Outlet />;
 }
 
 export default ProtectedRoute;
