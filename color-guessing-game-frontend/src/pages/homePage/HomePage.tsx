@@ -27,7 +27,6 @@ const HomePage : React.FC<HomePageProps>= (props: HomePageProps) => {
             <Header />
             <div className={'homePageContent'}>
                 <h1>Welcome to your Home Page {props.currentUser.firstName}!</h1>
-                <button onClick={handleLogout}>Logout</button>
             </div>
         </div>
     )

@@ -1,0 +1,14 @@
+.settings {
+  .headerContainer {
+    display: flex;
+    justify-content: center;
+    h1 {
+      margin: 24px;
+    }
+  }
+  i{
+    position: absolute;
+    right: 24px;
+    color: black;
+  }
+}

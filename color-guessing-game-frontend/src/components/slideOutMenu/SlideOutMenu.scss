@@ -1,0 +1,47 @@
+.fullScreenBlock {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 99;
+  width: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  transform: translateX(100%);
+  transition: background-color 300ms ease-in-out;
+  height: 100vh;
+
+  &.isOpen {
+    transform: unset;
+    width: auto;
+  }
+}
+
+.slideOutMenu {
+  position: fixed;
+  z-index: 100;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  transition: transform 300ms ease-in-out;
+  padding: 0;
+  height: 100vh;
+  width: 0;
+
+  &.rightToLeft {
+    right: 0;
+    transform: translateX(100%);
+  }
+
+  &.leftToRight {
+    left: 0;
+    transform: translateX(-100%);
+  }
+
+  &.isOpen {
+    transform: unset;
+    width: auto;
+    padding: 24px;
+  }
+}
