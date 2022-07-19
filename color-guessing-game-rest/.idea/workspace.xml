@@ -2,16 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1cd6f02-3460-45d3-b626-33f0b5987dc5" name="Changes" comment="work on creating a user route with get users and create user endpoints">
-      <change afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/components/menu/Menu.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/components/menu/Menu.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/components/settings/Settings.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/components/settings/Settings.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/components/slideOutMenu/SlideOutMenu.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/components/slideOutMenu/SlideOutMenu.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../color-guessing-game-frontend/src/components/header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/components/header/Header.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/@types/game.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/components/colorCard/ColorCard.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/components/colorCard/ColorCard.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/components/colorCardsContainer/ColorCardsContainer.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/components/colorCardsContainer/ColorCardsContainer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/utils/CardGenerator.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../color-guessing-game-frontend/src/pages/homePage/HomePage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/pages/homePage/HomePage.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../color-guessing-game-frontend/src/pages/homePage/HomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/pages/homePage/HomePage.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mariadb/data/ib_logfile0" beforeDir="false" afterPath="$PROJECT_DIR$/../mariadb/data/ib_logfile0" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +82,8 @@
       <workItem from="1657573942048" duration="3700000" />
       <workItem from="1657651642612" duration="9800000" />
       <workItem from="1657766333482" duration="1719000" />
-      <workItem from="1657994997381" duration="664000" />
+      <workItem from="1657994997381" duration="1265000" />
+      <workItem from="1658170841286" duration="617000" />
     </task>
     <task id="LOCAL-00001" summary="initial setup of basic server">
       <created>1657222967375</created>

@@ -3,6 +3,7 @@ import './HomePage.scss';
 import {connect} from "react-redux";
 import {useNavigate} from "react-router";
 import Header from "../../components/header/Header";
+import ColorCardsContainer from "../../components/colorCardsContainer/ColorCardsContainer";
 
 interface HomePageStateProps {
     currentUser: Model.User.User
@@ -27,6 +28,9 @@ const HomePage : React.FC<HomePageProps>= (props: HomePageProps) => {
             <Header />
             <div className={'homePageContent'}>
                 <h1>Welcome to your Home Page {props.currentUser.firstName}!</h1>
+                <button>Start A New Game</button>
+
+                <ColorCardsContainer numberOfCards={8} />
             </div>
         </div>
     )
