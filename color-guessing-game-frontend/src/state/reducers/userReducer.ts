@@ -1,7 +1,12 @@
-import { SET_CURRENT_USER, FETCH_CURRENT_USER } from "../actions/userActions";
+import {
+    SET_CURRENT_USER,
+    START_FETCH_CURRENT_USER,
+    SUCCESS_FETCH_CURRENT_USER
+} from "../actions/userActions";
 
-export const initialState = {
-   currentUser: null
+const initialState = {
+    loading: false,
+    currentUser: null
 }
 
 interface UserAction {
@@ -10,6 +15,8 @@ interface UserAction {
 }
 
 const userReducer = (state : Model.User.UserState = initialState, action : UserAction) => {
+    //@ts-ignore
+    const user = JSON.parse(localStorage.getItem('user'))
     switch (action.type) {
         case(SET_CURRENT_USER) :
             localStorage.setItem('user', JSON.stringify(action.payload))
@@ -17,17 +24,10 @@ const userReducer = (state : Model.User.UserState = initialState, action : UserA
                 ...state,
                 currentUser : action.payload
             });
-        case(FETCH_CURRENT_USER) :
-            if(!localStorage.getItem('user')) return ({
-                ...state,
-                currentUser: null
-            })
-            // @ts-ignore
-            let user = JSON.parse(localStorage.getItem('user'))
-            return ({
-                ...state,
-                currentUser : user
-            });
+        case(START_FETCH_CURRENT_USER) :
+            return({...state, loading: true, currentUser: null});
+        case(SUCCESS_FETCH_CURRENT_USER):
+            return ({...state, loading: false, currentUser: action.payload})
         default:
             return state
     }

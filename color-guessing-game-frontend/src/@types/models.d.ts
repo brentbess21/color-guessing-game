@@ -2,6 +2,7 @@ declare namespace Model {
 
     export namespace User {
         export interface UserState {
+            loading: boolean;
             currentUser: User | null;
         }
 
@@ -32,6 +33,32 @@ declare namespace Model {
         export interface LoginData {
             email: string;
             password: string;
+        }
+    }
+
+    export namespace Game {
+        export interface GameState {
+            loading: boolean;
+            currentGame: Model.Game.Game | null;
+        }
+        export interface Game {
+            score: number;
+            cardsArray: Model.Card.ColorCard[];
+            winningColor: string;
+            winningIndex: number;
+            hasWon: boolean;
+            timer: number;
+        }
+        export interface Rounds {
+            numberOfRounds: number;
+            rounds: Model.Game.Game [];
+        }
+    }
+
+    export namespace Card {
+        export interface ColorCard {
+            id: number
+            randomColor: string;
         }
     }
 }

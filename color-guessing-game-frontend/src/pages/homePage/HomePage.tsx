@@ -3,14 +3,15 @@ import './HomePage.scss';
 import {connect} from "react-redux";
 import {useNavigate} from "react-router";
 import Header from "../../components/header/Header";
-import ColorCardsContainer from "../../components/colorCardsContainer/ColorCardsContainer";
+import {startGame} from "../../state/actions/gameActions";
 
 interface HomePageStateProps {
-    currentUser: Model.User.User
+    currentUser: Model.User.User;
+    currentGame: Model.Game.Game;
 }
 
 interface HomePageDispatchProps {
-
+    startGame: ()=> {};
 }
 
 type HomePageProps = HomePageStateProps & HomePageDispatchProps;
@@ -18,9 +19,9 @@ type HomePageProps = HomePageStateProps & HomePageDispatchProps;
 const HomePage : React.FC<HomePageProps>= (props: HomePageProps) => {
     let navigate = useNavigate();
 
-    function handleLogout() {
-        localStorage.clear();
-        navigate('/welcome');
+    function handleStartNewGame() {
+        props.startGame()
+        navigate('/game');
     }
 
     return (
@@ -28,9 +29,7 @@ const HomePage : React.FC<HomePageProps>= (props: HomePageProps) => {
             <Header />
             <div className={'homePageContent'}>
                 <h1>Welcome to your Home Page {props.currentUser.firstName}!</h1>
-                <button>Start A New Game</button>
-
-                <ColorCardsContainer numberOfCards={8} />
+                <button onClick={handleStartNewGame}>Start A New Game</button>
             </div>
         </div>
     )
@@ -38,8 +37,11 @@ const HomePage : React.FC<HomePageProps>= (props: HomePageProps) => {
 
 const mapStateToProps = (state: any) => {
     return({
-        currentUser: state.user.currentUser
+        currentUser: state.user.currentUser,
+        currentGame: state.game.currentGame
     })
 }
 
-export default connect(mapStateToProps)( HomePage);
+const mapDispatchToProps = {startGame}
+
+export default connect(mapStateToProps, mapDispatchToProps)( HomePage);

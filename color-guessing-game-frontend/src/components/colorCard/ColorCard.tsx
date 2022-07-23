@@ -1,38 +1,57 @@
 import React, {useState} from 'react';
 import './ColorCard.scss';
+import {connect} from "react-redux";
+import {setWinner} from "../../state/actions/gameActions";
 
-interface ColorCardProps {
+interface ColorCardStateProps {
+    currentGame: Model.Game.Game;
+}
+
+interface ColorCardDispatchProps {
+    setWinner: ()=> void;
+}
+
+interface ColorCardCustomProps {
     id: number;
     randomColor: string;
-    winnerIndex: number;
 }
+
+type ColorCardProps = ColorCardStateProps & ColorCardDispatchProps & ColorCardCustomProps;
 
 const ColorCard = (props: ColorCardProps) => {
     const [wrongGuess, setWrongGuess] = useState<boolean>(false);
+    const guessedColor = '#002f5c'
 
-    function handleClick() {
-        if (props.id === props.winnerIndex) {
-            console.log('You win!!');
+    function handleCardClick() {
+        if (props.id === props.currentGame.winningIndex) {
+            props.setWinner()
         }
         setWrongGuess(true);
     }
 
-    function renderColor (randomColor : string) : object {
+    function renderColor () : object {
         if(wrongGuess) {
             return {
-                backgroundColor: 'rgba(95, 95, 95, 0.5)'
+                backgroundColor: guessedColor
             }
-        } else
+        }
         return {
-            backgroundColor: randomColor
+            backgroundColor: props.randomColor
         }
     }
 
-
     return (
-        <div className={'colorCard'} style={renderColor(props.randomColor)} onClick={handleClick}>
+        <div className={'colorCard'} style={renderColor()} onClick={handleCardClick}>
         </div>
     )
 }
 
-export default ColorCard;
+const mapStateToProps = (state: any) => {
+    return ({
+        currentGame: state.game.currentGame
+    })
+}
+
+const mapDispatchToProps= {setWinner}
+
+export default connect(mapStateToProps, mapDispatchToProps) (ColorCard);

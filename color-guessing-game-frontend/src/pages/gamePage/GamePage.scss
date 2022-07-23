@@ -1,0 +1,30 @@
+.gamePage {
+  height: 100vh;
+  .headerContainer {
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:16px;
+    color: #ffffff;
+    background-color: #3097b2;
+    margin-bottom: 16px;
+    .rgbColor {
+      font-size: 32px;
+      text-transform: uppercase;
+    }
+  }
+
+  .divider {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  .cardsContainer {
+    padding: 48px;
+    background-color: #002f5c;
+    height: 75vh;
+  }
+}

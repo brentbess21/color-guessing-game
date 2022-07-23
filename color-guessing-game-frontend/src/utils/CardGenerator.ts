@@ -1,8 +1,3 @@
-interface ColorCard {
-    id: number
-    randomColor: string;
-}
-
 export class CardGenerator {
     constructor( public numberOfCards: number) {
     }
@@ -14,16 +9,16 @@ export class CardGenerator {
         return `rgb(${r}, ${g}, ${b})`
     }
 
-    generateColorCards(): ColorCard[] {
-        const colorCards : ColorCard[] = []
+    generateColorCardsArray(): Model.Card.ColorCard[] {
+        const cardsArray: Model.Card.ColorCard[] = []
         for(let i = 0; i < this.numberOfCards; i++) {
-            const card : ColorCard = {
+            const card : Model.Card.ColorCard = {
                 id: i,
                 randomColor: this.generateRandomColors()
             }
-            colorCards.push(card)
+            cardsArray.push(card)
         }
-        return colorCards
+        return cardsArray
     }
 
 }
