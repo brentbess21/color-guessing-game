@@ -43,11 +43,13 @@ declare namespace Model {
         }
         export interface Game {
             score: number;
+            timer: number;
             cardsArray: Model.Card.ColorCard[];
             winningColor: string;
             winningIndex: number;
             hasWon: boolean;
-            timer: number;
+            gameOver: boolean;
+            numberOfGuesses: number;
         }
         export interface Rounds {
             numberOfRounds: number;

@@ -1,6 +1,5 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './GamePage.scss';
-import {CardGenerator} from "../../utils/CardGenerator";
 import ColorCardsContainer from "../../components/colorCardsContainer/ColorCardsContainer";
 import Header from "../../components/header/Header";
 import {connect} from "react-redux";
@@ -17,8 +16,14 @@ interface GamePageDispatchProps {
 type GamePageProps = GamePageStateProps & GamePageDispatchProps
 
 const GamePage : React.FC<GamePageProps> = (props: GamePageProps) => {
+    const gameOverColor = 'rgb(95, 95, 95)'
 
     function renderColor() {
+        if(props.currentGame.gameOver) {
+            return {
+                backgroundColor: gameOverColor
+            }
+        }
         if(props.currentGame.hasWon) {
             return {
                 backgroundColor: props.currentGame.winningColor
@@ -35,7 +40,6 @@ const GamePage : React.FC<GamePageProps> = (props: GamePageProps) => {
                 </div>
                 <div className={'divider'}>
                     <p>Score: {props.currentGame.score}</p>
-                    {props.currentGame.hasWon? <p>Correct!</p> : <p>Try Again</p>}
                     <GameTimer />
                 </div>
                 <div className={'cardsContainer'}>

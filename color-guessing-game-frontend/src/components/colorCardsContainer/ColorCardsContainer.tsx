@@ -3,6 +3,7 @@ import './ColorCardsContainer.scss';
 import ColorCard from '../colorCard/ColorCard';
 import {connect} from "react-redux";
 import {startGame} from "../../state/actions/gameActions";
+import {useNavigate} from "react-router";
 
 interface ColorCardsContainerStateProps {
     currentGame: Model.Game.Game;
@@ -15,8 +16,14 @@ interface ColorCardsContainerDispatchProps {
 type ColorCardsContainerProps = ColorCardsContainerStateProps & ColorCardsContainerDispatchProps;
 
 const ColorCardsContainer = (props: ColorCardsContainerProps) => {
+    let navigate = useNavigate();
+    const gameOverColor = 'rgb(95, 95, 95)';
 
     function handlePlayAgain() {
+        navigate('/home');
+    }
+
+    function handleNextRound() {
         props.startGame();
     }
 
@@ -27,16 +34,22 @@ const ColorCardsContainer = (props: ColorCardsContainerProps) => {
         })
     }
 
-    function renderWinnerMessage() {
+    function renderMessage() {
         return (
             <div className={'winningMessage'}>
-                <h3>You win!</h3>
-                <button onClick={handlePlayAgain}>Play Again?</button>
+                {props.currentGame.gameOver ? <h3>Game Over</h3> : <h3>Correct!</h3>}
+                {props.currentGame.gameOver ? <button onClick={handlePlayAgain}>Play Again</button> : <button onClick={handleNextRound}>Next Round</button> }
+                {/*<button onClick={handlePlayAgain}>{props.currentGame.gameOver ? 'Play Again?' : 'Next Round'}</button>*/}
             </div>
         )
     }
 
     function renderBackgroundColor() : object | void {
+        if(props.currentGame.gameOver) {
+            return {
+                backgroundColor: gameOverColor
+            }
+        }
         if(props.currentGame.hasWon) {
             return {
                 backgroundColor: props.currentGame.winningColor
@@ -44,10 +57,9 @@ const ColorCardsContainer = (props: ColorCardsContainerProps) => {
         }
     }
 
-
     return (
         <div className={'colorCardsContainer'} style={renderBackgroundColor()} >
-            { props.currentGame.hasWon? renderWinnerMessage() : renderColorCards()}
+            {props.currentGame.hasWon || props.currentGame.gameOver ? renderMessage() : renderColorCards()}
         </div>
     )
 }
