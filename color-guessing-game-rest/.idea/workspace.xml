@@ -2,26 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1cd6f02-3460-45d3-b626-33f0b5987dc5" name="Changes" comment="work on creating a user route with get users and create user endpoints">
-      <change afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/pages/gamePage/GamePage.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/pages/gamePage/GamePage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/pages/loadingPage/LoadingPage.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/pages/loadingPage/LoadingPage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/state/actions/gameActions.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/state/reducers/gameReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../color-guessing-game-frontend/src/@types/models.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/@types/models.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../color-guessing-game-frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../color-guessing-game-frontend/src/components/colorCard/ColorCard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/components/colorCard/ColorCard.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../color-guessing-game-frontend/src/components/colorCard/ColorCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/components/colorCard/ColorCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../color-guessing-game-frontend/src/components/colorCardsContainer/ColorCardsContainer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/components/colorCardsContainer/ColorCardsContainer.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../color-guessing-game-frontend/src/components/colorCardsContainer/ColorCardsContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/components/colorCardsContainer/ColorCardsContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../color-guessing-game-frontend/src/pages/homePage/HomePage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/pages/homePage/HomePage.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../color-guessing-game-frontend/src/pages/homePage/HomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/pages/homePage/HomePage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../color-guessing-game-frontend/src/state/actions/userActions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/state/actions/userActions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../color-guessing-game-frontend/src/state/reducers/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/state/reducers/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../color-guessing-game-frontend/src/state/reducers/userReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/state/reducers/userReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../color-guessing-game-frontend/src/utils/CardGenerator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/utils/CardGenerator.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/components/gameTimer/GameTimer.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/components/gameTimer/gameTimer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../color-guessing-game-frontend/src/pages/gamePage/GamePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/pages/gamePage/GamePage.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mariadb/data/ib_logfile0" beforeDir="false" afterPath="$PROJECT_DIR$/../mariadb/data/ib_logfile0" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

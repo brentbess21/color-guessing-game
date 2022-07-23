@@ -4,6 +4,7 @@ import {CardGenerator} from "../../utils/CardGenerator";
 import ColorCardsContainer from "../../components/colorCardsContainer/ColorCardsContainer";
 import Header from "../../components/header/Header";
 import {connect} from "react-redux";
+import GameTimer from "../../components/gameTimer/gameTimer";
 
 interface GamePageStateProps {
     currentGame : Model.Game.Game
@@ -35,7 +36,7 @@ const GamePage : React.FC<GamePageProps> = (props: GamePageProps) => {
                 <div className={'divider'}>
                     <p>Score: {props.currentGame.score}</p>
                     {props.currentGame.hasWon? <p>Correct!</p> : <p>Try Again</p>}
-                    <p>Timer: {props.currentGame.timer}</p>
+                    <GameTimer />
                 </div>
                 <div className={'cardsContainer'}>
                     <ColorCardsContainer />
