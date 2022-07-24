@@ -49,7 +49,6 @@ declare namespace Model {
             winningIndex: number;
             hasWon: boolean;
             gameOver: boolean;
-            numberOfGuesses: number;
         }
         export interface Rounds {
             numberOfRounds: number;

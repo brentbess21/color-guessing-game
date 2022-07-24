@@ -5,9 +5,8 @@
       <change beforePath="$PROJECT_DIR$/../color-guessing-game-frontend/src/@types/models.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/@types/models.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../color-guessing-game-frontend/src/components/colorCard/ColorCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/components/colorCard/ColorCard.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../color-guessing-game-frontend/src/components/colorCardsContainer/ColorCardsContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/components/colorCardsContainer/ColorCardsContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../color-guessing-game-frontend/src/components/gameTimer/gameTimer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/components/gameTimer/gameTimer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../color-guessing-game-frontend/src/pages/gamePage/GamePage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/pages/gamePage/GamePage.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../color-guessing-game-frontend/src/pages/gamePage/GamePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/pages/gamePage/GamePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../color-guessing-game-frontend/src/pages/homePage/HomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/pages/homePage/HomePage.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../color-guessing-game-frontend/src/state/actions/gameActions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/state/actions/gameActions.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../color-guessing-game-frontend/src/state/reducers/gameReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../color-guessing-game-frontend/src/state/reducers/gameReducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -83,7 +82,7 @@
       <workItem from="1657651642612" duration="9800000" />
       <workItem from="1657766333482" duration="1719000" />
       <workItem from="1657994997381" duration="1265000" />
-      <workItem from="1658170841286" duration="1666000" />
+      <workItem from="1658170841286" duration="1838000" />
     </task>
     <task id="LOCAL-00001" summary="initial setup of basic server">
       <created>1657222967375</created>

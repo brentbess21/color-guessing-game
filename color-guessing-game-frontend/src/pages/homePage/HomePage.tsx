@@ -11,7 +11,7 @@ interface HomePageStateProps {
 }
 
 interface HomePageDispatchProps {
-    startGame: ()=> {};
+    startGame: (initialScore: number)=> {};
 }
 
 type HomePageProps = HomePageStateProps & HomePageDispatchProps;
@@ -20,7 +20,7 @@ const HomePage : React.FC<HomePageProps>= (props: HomePageProps) => {
     let navigate = useNavigate();
 
     function handleStartNewGame() {
-        props.startGame()
+        props.startGame(0);
         navigate('/game');
     }
 

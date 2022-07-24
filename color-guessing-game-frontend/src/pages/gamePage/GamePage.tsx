@@ -55,6 +55,7 @@ const GamePage : React.FC<GamePageProps> = (props: GamePageProps) => {
             <div className={'gamePage'}>
                 {renderGame()}
             </div>
+            <button onClick={()=>{console.log(props.currentGame)}}>click me for props</button>
         </>
     )
 }

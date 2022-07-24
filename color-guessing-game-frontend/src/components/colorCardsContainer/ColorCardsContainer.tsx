@@ -10,7 +10,7 @@ interface ColorCardsContainerStateProps {
 }
 
 interface ColorCardsContainerDispatchProps {
-    startGame: ()=> {};
+    startGame: (initialScore: number)=> {};
 }
 
 type ColorCardsContainerProps = ColorCardsContainerStateProps & ColorCardsContainerDispatchProps;
@@ -24,7 +24,7 @@ const ColorCardsContainer = (props: ColorCardsContainerProps) => {
     }
 
     function handleNextRound() {
-        props.startGame();
+        props.startGame(props.currentGame.score);
     }
 
     function renderColorCards () {
@@ -39,7 +39,6 @@ const ColorCardsContainer = (props: ColorCardsContainerProps) => {
             <div className={'winningMessage'}>
                 {props.currentGame.gameOver ? <h3>Game Over</h3> : <h3>Correct!</h3>}
                 {props.currentGame.gameOver ? <button onClick={handlePlayAgain}>Play Again</button> : <button onClick={handleNextRound}>Next Round</button> }
-                {/*<button onClick={handlePlayAgain}>{props.currentGame.gameOver ? 'Play Again?' : 'Next Round'}</button>*/}
             </div>
         )
     }

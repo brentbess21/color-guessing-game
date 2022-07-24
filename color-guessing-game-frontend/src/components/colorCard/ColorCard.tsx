@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './ColorCard.scss';
 import {connect} from "react-redux";
-import {setWinner, startGame} from "../../state/actions/gameActions";
+import {setWinner, startGame, updateGameScore} from "../../state/actions/gameActions";
 
 interface ColorCardStateProps {
     currentGame: Model.Game.Game;
@@ -9,7 +9,7 @@ interface ColorCardStateProps {
 
 interface ColorCardDispatchProps {
     setWinner: ()=> {};
-    startGame: ()=> {};
+    updateGameScore: (numberOfGuesses: number)=> {};
 }
 
 interface ColorCardCustomProps {
@@ -21,13 +21,17 @@ type ColorCardProps = ColorCardStateProps & ColorCardDispatchProps & ColorCardCu
 
 const ColorCard = (props: ColorCardProps) => {
     const [wrongGuess, setWrongGuess] = useState<boolean>(false);
+    const [numberOfGuesses, setNumberOfGuesses] = useState<number>(0);
     const guessedColor = '#002f5c'
 
     function handleCardClick() {
         if (props.id === props.currentGame.winningIndex) {
             props.setWinner();
+            props.updateGameScore(numberOfGuesses);
+            setNumberOfGuesses(0);
         }
         setWrongGuess(true);
+        setNumberOfGuesses(numberOfGuesses + 1);
     }
 
     function renderColor () : object {
@@ -53,6 +57,6 @@ const mapStateToProps = (state: any) => {
     })
 }
 
-const mapDispatchToProps= {setWinner, startGame}
+const mapDispatchToProps= {setWinner, startGame, updateGameScore}
 
 export default connect(mapStateToProps, mapDispatchToProps) (ColorCard);
