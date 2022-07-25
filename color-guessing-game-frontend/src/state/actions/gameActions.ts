@@ -2,6 +2,7 @@ import {CardGenerator} from "../../utils/CardGenerator";
 
 export const START_GAME = 'START_GAME';
 export const SET_WINNER = 'SET_WINNER';
+export const UPDATE_GUESS_COUNT = 'UPDATE_GUESS_COUNT';
 export const UPDATE_GAME_SCORE = 'UPDATE_GAME_SCORE';
 export const SET_GAME_OVER = 'SET_GAME_OVER';
 
@@ -13,18 +14,23 @@ export const startGame = (initialScore: number) => {
 
     const newGame : Model.Game.Game = {
         score: initialScore,
-        timer: 10,
+        timer: 30,
         cardsArray: cardsArray,
         winningIndex: winnerIndex,
         winningColor: winningColor,
         hasWon: false,
-        gameOver: false
+        gameOver: false,
+        currentGuessCount: 0
     }
     return ({type: START_GAME, payload: newGame})
 }
 
 export const setWinner = () => {
     return ({type: SET_WINNER})
+}
+
+export const updateGuessCount = (updatedGuessCount : number) => {
+    return({type: UPDATE_GUESS_COUNT, payload: updatedGuessCount})
 }
 
 export const updateGameScore = (numberOfGuesses: number) => {
